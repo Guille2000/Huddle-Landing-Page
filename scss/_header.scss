@@ -1,0 +1,105 @@
+@use 'variables' as v; 
+@use 'mixins' as m;
+
+.header{
+    padding:3rem;
+    font-family:v.$fuenteHeading;
+    background-image: url(../images/bg-hero-mobile.svg);
+    background-repeat:no-repeat;
+    background-size:cover;
+
+    @include m.desktop{
+    background-image: url(../images/bg-hero-desktop.svg);
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    }
+
+
+    &__nav{
+        display:flex;
+        justify-content: space-between;
+    }
+    &__logo{
+        width:30%;
+    }
+
+    &__enlace{
+        color:#000;
+        font-size:1.6rem;
+        border-radius: 3rem;
+        padding: 1.5rem 4rem;
+        background-color: #fff;
+        box-shadow: 1px 0px 8px $GrayishBlue;
+
+        @include m.tablet{
+            padding:1.5rem 7rem;
+        }
+    }
+
+    &__contenido{
+        padding:2rem;
+        margin-top:4.3rem;
+        text-align:center;
+
+        @include m.tablet{
+            @include m.grid(2, 2rem);
+            align-items: center;
+        }
+
+    }
+
+    &__descripcion{
+        @include m.desktop{
+            display:flex;
+            flex-direction:column;
+            align-items: first baseline;
+        }
+    }
+    
+    &__heading{
+        font-size:2.7rem;
+
+        @include m.tablet{
+            text-align:left;
+            width:60%;
+        }
+    }
+
+    &__texto{
+        margin-top:2rem;
+        font-size:1.5rem;
+        font-family:v.$fuenteBody;
+        @include m.tablet{
+            text-align:left;
+            width:76%;
+            font-size:1.5rem;
+        }
+    }
+
+    &__posicion{
+        margin-top:3.6rem;
+        @include m.tablet{
+            margin-top:0;
+        }
+    }
+
+    &__btn{
+        padding: 1.5rem 7rem;
+        background-color:v.$rosa;
+        color:#fff;
+        margin-top:4rem;
+        border-radius:2rem;
+        font-size:1.3rem;
+        display:block;
+
+        &:hover{
+            background-color:#efaeff;
+        }
+    }
+
+    &__mockup{
+        margin-top:6rem;
+    }
+
+}

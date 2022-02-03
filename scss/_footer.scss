@@ -1,0 +1,94 @@
+@use 'variables' as v; 
+@use 'mixins' as m;
+
+.footer{
+    background-color:v.$VeryDarkCyan;
+    padding:3.5rem;
+    color:#fff;
+    font-family:v.$fuenteBody;
+
+    &__contenido{
+        margin-top:7rem;
+
+        @include m.tablet{
+            @include m.grid(4, 2rem);
+            align-items: center;
+        }
+    }
+
+    &__iconos{
+        display:flex;
+        flex-direction:column;
+        font-size:1.7rem;
+        margin-top:3.2rem;
+        margin-bottom:3.4rem;
+        grid-column: 1/2;
+    }
+
+    &__icono{
+        color:#fff;
+        font-size:1.6rem;
+        font-weight:400;
+        margin-bottom:3rem;
+        margin-left: 3rem;
+        font-family:v.$fuenteBody;
+    }
+    .fa-map-marker-alt,
+    .fa-phone,
+    .fa-envelope-square{
+        margin-bottom:3rem;
+    }
+
+    &__enlaces{
+        cursor:pointer;
+        font-size:1.6rem;
+        margin-bottom:2rem;
+
+        &:hover{
+            text-decoration:underline;
+        }
+    }
+
+    &__redes,
+    &__copyright{
+        text-align:center;
+    }
+
+    &__copyright{
+        font-size:1.6rem;
+        grid-column: 5/6;
+    }
+    &__redes{
+        margin-bottom:2.5rem;
+        font-size:2.6rem;
+        grid-column: 5/5;
+    }
+
+    &__links,
+    &__linkss{
+        @include m.tablet{
+        text-align:center;
+        }
+
+       
+    
+    }
+    &__linkss{
+        grid-column:4/5;
+    }
+    &__links{
+        grid-column:3/3;
+    }
+        .fa-facebook,
+        .fa-twitter,
+        .fa-instagram{
+            border-radius: 50%;
+            border: 1px solid white;
+            padding: 0.6rem;
+            cursor:pointer;
+
+            &:hover{
+                color:v.$rosa;
+            }
+        }
+}
